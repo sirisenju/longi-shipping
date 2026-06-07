@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logistiqo - Destinations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#271816",
+                        "on-primary-fixed-variant": "#930013",
+                        "surface-bright": "#fff8f7",
+                        "on-secondary-container": "#5c647a",
+                        "on-surface-variant": "#5b403e",
+                        "surface-dim": "#f0d3d1",
+                        "bg-off-white": "#F8FAFC",
+                        "surface": "#fff8f7",
+                        "on-error": "#ffffff",
+                        "on-background": "#271816",
+                        "surface-container": "#ffe9e7",
+                        "text-muted": "#64748B",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#3e2c2b",
+                        "on-tertiary-fixed-variant": "#00504e",
+                        "primary-container": "#da3437",
+                        "on-secondary-fixed": "#131b2e",
+                        "tertiary-fixed-dim": "#69d8d4",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-variant": "#f9dcd9",
+                        "surface-container-highest": "#f9dcd9",
+                        "surface-container-low": "#fff0ef",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#ffe2df",
+                        "outline": "#8f6f6d",
+                        "tertiary-container": "#008280",
+                        "primary-fixed": "#ffdad7",
+                        "surface-tint": "#b91a24",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#87f4f0",
+                        "inverse-primary": "#ffb3ad",
+                        "outline-variant": "#e4beba",
+                        "tertiary": "#006765",
+                        "on-primary-fixed": "#410004",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#dae2fd",
+                        "secondary-container": "#dae2fd",
+                        "background": "#fff8f7",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-primary-container": "#fffbff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-tertiary-fixed": "#00201f",
+                        "primary": "#b61722",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary": "#565e74",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#f3fffd",
+                        "border-soft": "#E2E8F0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin-desktop": "2rem",
+                        "section-padding": "5rem",
+                        "margin-mobile": "1rem",
+                        "gutter": "2rem"
+                    },
+                    "fontFamily": {
+                        "label-metadata": ["Inter"],
+                        "display-hero": ["Plus Jakarta Sans"],
+                        "section-tag": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-metadata": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-hero": ["72px", { "lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "section-tag": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "h2": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-bg-off-white text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<nav class="fixed top-4 w-full z-50 bg-transparent no-border flat no shadows">
+<div class="max-w-container-max mx-auto flex items-center justify-between px-margin-desktop py-4 bg-white/80 dark:bg-on-surface/80 backdrop-blur-md rounded-full shadow-sm">
+<div class="font-h1 text-h2 font-bold text-on-surface dark:text-surface-bright">
+                Logistiqo
+            </div>
+<div class="hidden md:flex items-center gap-2">
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300 font-label-metadata text-label-metadata scale-95 duration-200" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300 font-label-metadata text-label-metadata scale-95 duration-200" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300 font-label-metadata text-label-metadata scale-95 duration-200" href="#">Discover</a>
+<a class="bg-surface-container-high dark:bg-surface-container-highest rounded-full px-4 py-1 text-on-surface font-semibold font-label-metadata text-label-metadata scale-95 duration-200" href="#">Destinations</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300 font-label-metadata text-label-metadata scale-95 duration-200" href="#">Contact</a>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-metadata text-label-metadata px-6 py-3 rounded-full flex items-center gap-2 transition-colors duration-300 scale-95 duration-200">
+                Get Connected <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative pt-32 pb-section-padding px-margin-mobile md:px-margin-desktop overflow-hidden min-h-[819px] flex items-center">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-surface-container-lowest">
+<img alt="A high-contrast, modern architectural view of a massive global shipping port at dawn. The scene features imposing geometric cranes and meticulously arranged shipping containers bathed in crisp, cool morning light. The composition emphasizes scale, industrial power, and precision, using a sophisticated palette of metallic greys, pure whites, and vibrant, brand-aligned red accents on key machinery. The mood is highly professional, forward-looking, and dynamic." class="w-full h-full object-cover opacity-20 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyRRdnpP3wUcCVTiRCT871qkD2PgkBGkNcBFhMHIiYhF8TCjIfLn56PXxlJIkoXBV2dwL-LpHEMpogRoCZBVCDTPsRbVmefDxoRkV9EieFYxiKd2URFz616kiKog4GTAKeeF4LFstzOFQHeoyRHviYI6zumxPTJaULJiP2agL7bKP4kB20oQO2GZfMzFHT_jCJpKMdHQbABHVacuGcveLZjA8okALyAhRtXfGGTvAVl9PRW70ODTrTOwPlqF88AGDXwuJV7rnu2fYO"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-bg-off-white via-bg-off-white/80 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto relative z-10 grid md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-8">
+<div class="inline-block px-4 py-1 rounded-full border-[1.5px] border-surface-container-high bg-white/50 backdrop-blur-sm mb-6">
+<span class="font-section-tag text-section-tag text-primary uppercase tracking-widest">Global Network</span>
+</div>
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface mb-6 uppercase tracking-tighter">
+                        Global Reach,<br/>
+<span class="text-primary">Local Precision.</span>
+</h1>
+<p class="font-body text-body text-on-surface-variant max-w-2xl text-lg md:text-xl">
+                        Explore our comprehensive network of shipping routes and regional hubs across the globe. We connect continents with industrial-grade reliability and high-performance logistics solutions.
+                    </p>
+</div>
+<div class="md:col-span-4 hidden md:block">
+<!-- Decorative structural element -->
+<div class="relative w-full aspect-square rounded-[24px] bg-white border border-border-soft shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden p-6 flex flex-col justify-between">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-weight="fill">public</span>
+</div>
+<span class="font-h2 text-h2 text-on-surface">120+</span>
+</div>
+<div>
+<p class="font-label-metadata text-label-metadata text-text-muted uppercase mb-2">Active Ports</p>
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-3/4"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary Hubs Bento Grid -->
+<section class="py-section-padding px-margin-mobile md:px-margin-desktop bg-bg-off-white">
+<div class="max-w-container-max mx-auto">
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-h1 text-h1 text-on-surface mb-4">Primary Hubs</h2>
+<p class="font-body text-body text-text-muted max-w-xl">Strategic locations anchoring our global supply chain infrastructure, equipped with state-of-the-art handling capabilities.</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-label-metadata text-label-metadata hover:text-primary-container transition-colors">
+                        View Full Directory <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+<!-- Rotterdam Card - Large -->
+<div class="md:col-span-8 relative rounded-[24px] overflow-hidden group">
+<img alt="A wide, sweeping view of the Port of Rotterdam during a bright, slightly overcast day. The image highlights the immense scale of the industrial shipping complex, with endless rows of precisely stacked containers in deep reds, blues, and greys. Towering automated cranes stand stark against the sky. The lighting is clean and cool, reinforcing a high-performance, modern logistics aesthetic. The scene implies continuous, efficient global trade." class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzHuDNavqQ2UCPuQdsLXI97sCW1MaS3VDg1S9J11-9za2JMSshF19ISfQdwLznDGn21Uh3Y2R-6lvoTUVeYmQa0FPZiCWPZu_8Wk21Vz2kqgVznRHvRaagHUkn-IvQz5zFH1B_N22izqC5mcXECd9pew6h3naL4j5Cuc1yN36pZKiS5PK9A8UmLZxfSt7hAUDdPHaANBQZrD98KSKirrc_VSaznCIDXNc1xQCUr5tN-ziIkv8fuh5dx5GG67zdnm8hOJj_-aN3v0t4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-8 flex justify-between items-end">
+<div>
+<div class="flex items-center gap-2 mb-3">
+<span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full font-section-tag text-section-tag text-white uppercase border border-white/30">Europe</span>
+<span class="px-3 py-1 bg-primary/90 backdrop-blur-md rounded-full font-section-tag text-section-tag text-white uppercase">Mega Hub</span>
+</div>
+<h3 class="font-h2 text-h2 text-white mb-1">Rotterdam, NLD</h3>
+<p class="font-body text-body text-surface-bright/80">Automated Deep-Water Terminals</p>
+</div>
+<div class="hidden sm:flex flex-col items-end">
+<span class="font-h2 text-h2 text-white">14.3M</span>
+<span class="font-label-metadata text-label-metadata text-surface-bright/60">TEU Annual</span>
+</div>
+</div>
+</div>
+<!-- Singapore Card - Square -->
+<div class="md:col-span-4 relative rounded-[24px] overflow-hidden group">
+<img alt="An aerial perspective of the bustling Port of Singapore at dusk. The water is dotted with massive cargo ships, while the terminal itself is a dense, organized grid of shipping containers illuminated by stark industrial lighting. The aesthetic is highly technical and precise, with a color palette dominated by deep oceanic blues, metallic greys, and striking artificial white and red lights. It conveys maximum efficiency and global connectivity." class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfMNQa8RJb2AiIQN9wHxoEUt0WDR3GpqdEHZxIMSBNCTKBfko-zcIZKnYd4-FLL9AskSxi0ZhdRBbea11lAaz3DIZaKAAIlEKVB3_LC9BgWleEnz6Xsocre6sgp_0HhD3fwmX-2g_WeAj6lXPNuZonPqOlKZUwNopKzf7V7XUnm4HZGzwTKLfT4eVKwWbZWTf983uHZBLCsBLftXPhwnPLd41ZnPlme2gmpodx99bM4SgJPibuU4QZ03WFQAEro9pOUWNRoDniBiPo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-6">
+<div class="mb-3">
+<span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full font-section-tag text-section-tag text-white uppercase border border-white/30">Asia Pacific</span>
+</div>
+<h3 class="font-h2 text-h2 text-white mb-1">Singapore, SGP</h3>
+<p class="font-body text-body text-surface-bright/80 text-sm">Transshipment Center</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface text-primary dark:text-inverse-primary font-body text-body full-width border-t border-soft dark:border-outline-variant flat no shadows mt-24">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center">
+<div class="font-h2 text-h2 font-bold text-on-surface dark:text-surface-bright mb-6 md:mb-0">
+                Logistiqo
+            </div>
+<div class="flex flex-wrap justify-center gap-6 mb-6 md:mb-0">
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Cookie Policy</a>
+</div>
+<div class="text-text-muted dark:text-on-surface-variant text-sm">
+                © 2024 Logistiqo. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

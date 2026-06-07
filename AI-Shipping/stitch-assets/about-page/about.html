@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Logistiqo</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#e4beba",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "bg-off-white": "#F8FAFC",
+                        "surface-container-highest": "#f9dcd9",
+                        "surface-dim": "#f0d3d1",
+                        "inverse-on-surface": "#ffedeb",
+                        "on-primary-fixed-variant": "#930013",
+                        "surface-variant": "#f9dcd9",
+                        "on-background": "#271816",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#ffdad7",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#69d8d4",
+                        "surface-container": "#ffe9e7",
+                        "surface": "#fff8f7",
+                        "inverse-primary": "#ffb3ad",
+                        "on-secondary-container": "#5c647a",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-container": "#008280",
+                        "on-tertiary-fixed-variant": "#00504e",
+                        "on-primary-fixed": "#410004",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#fff0ef",
+                        "border-soft": "#E2E8F0",
+                        "tertiary-fixed": "#87f4f0",
+                        "inverse-surface": "#3e2c2b",
+                        "tertiary": "#006765",
+                        "on-tertiary-fixed": "#00201f",
+                        "surface-container-high": "#ffe2df",
+                        "primary": "#b61722",
+                        "surface-tint": "#b91a24",
+                        "on-surface-variant": "#5b403e",
+                        "secondary-container": "#dae2fd",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary": "#565e74",
+                        "surface-bright": "#fff8f7",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "text-muted": "#64748B",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "background": "#fff8f7",
+                        "on-tertiary-container": "#f3fffd",
+                        "outline": "#8f6f6d",
+                        "primary-container": "#da3437",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-surface": "#271816"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "3xl": "24px"
+                    },
+                    "spacing": {
+                        "section-padding": "5rem",
+                        "margin-mobile": "1rem",
+                        "gutter": "2rem",
+                        "margin-desktop": "2rem",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "section-tag": ["Inter"],
+                        "display-hero-mobile": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "label-metadata": ["Inter"],
+                        "h1": ["Plus Jakarta Sans"],
+                        "display-hero": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "section-tag": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "display-hero-mobile": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-metadata": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h1": ["36px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-hero": ["72px", { "lineHeight": "1.05", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-4 w-full z-50 px-margin-mobile md:px-margin-desktop">
+<nav class="max-w-container-max mx-auto flex items-center justify-between px-6 py-4 bg-white/80 dark:bg-on-surface/80 backdrop-blur-md rounded-full shadow-sm">
+<div class="font-h1 text-h2 font-bold text-on-surface dark:text-surface-bright tracking-tight">Logistiqo</div>
+<div class="hidden md:flex items-center space-x-2 font-body text-body">
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="bg-surface-container-high dark:bg-surface-container-highest rounded-full px-4 py-1 text-on-surface font-semibold pointer-events-none" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">Discover</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">Destinations</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-metadata text-label-metadata px-6 py-3 rounded-full flex items-center gap-2 transition-colors duration-300 transform active:scale-95 duration-200 shadow-sm">
+<span>Get Connected</span>
+<span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+</button>
+</nav>
+</header>
+<main class="pt-32 pb-section-padding">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="w-full md:w-5/12 flex flex-col justify-center space-y-6">
+<span class="font-section-tag text-section-tag text-primary uppercase tracking-widest inline-block px-4 py-2 border border-border-soft rounded-full self-start bg-surface-container-lowest shadow-sm">Our Origin</span>
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface">LOGISTICS EXPERTISE REIMAGINED</h1>
+<p class="font-body text-body text-on-surface-variant max-w-md">
+                        We are engineering the future of global supply chains. By merging industrial reliability with high-performance digital systems, we move the world forward with precision.
+                    </p>
+</div>
+<div class="w-full md:w-7/12 relative">
+<div class="rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/10] shadow-sm relative group">
+<img alt="A modern, high-tech logistics center showing automated sorting machinery and bright, clean industrial lighting." class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A sprawling, high-tech modern logistics distribution center. The scene is brightly lit with cool, clean industrial lighting reflecting off polished concrete floors. Rows of automated sorting machinery and digital display screens line the warehouse. The aesthetic is industrial yet impeccably clean, conveying speed, precision, and modern digital logistics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF8jzHA93IkdJrptJo-8w1bCXpp1hkHmtPE99DpZBh6J5HyW79CltSroYPIN3wkrLPzCzOMKxYnPQeDXQZMtvslpQZmxmGzJmzsQ1Fgv2PdH_uEqJ2i23VT6Y86XgUKK0hDnZXxNE1hGYzDxamCbQ41I1_UosOhi7XtNiwPeIC1b5yTW1DunwG-TDSLLKUJEcFmx9X6thBTXGkZf-ZOSfHYmyw-iO_wXKBbn8HbmQuAH-eRMKALPR0t2cAzJ6UGj2gTCjPxPHrpxKm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+<p class="font-label-metadata text-label-metadata text-white">Advanced Digital Orchestration Facility</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+<div class="bg-surface-container-lowest rounded-3xl p-8 md:p-12 shadow-sm border border-border-soft">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-border-soft">
+<div class="flex flex-col items-center justify-center pt-8 md:pt-0">
+<span class="font-display-hero-mobile text-display-hero-mobile text-primary mb-2">15+</span>
+<span class="font-label-metadata text-label-metadata text-on-surface-variant uppercase tracking-wider">YR EXPERTISE</span>
+</div>
+<div class="flex flex-col items-center justify-center pt-8 md:pt-0">
+<span class="font-display-hero-mobile text-display-hero-mobile text-on-surface mb-2">30+</span>
+<span class="font-label-metadata text-label-metadata text-on-surface-variant uppercase tracking-wider">CO COUNTRIES</span>
+</div>
+<div class="flex flex-col items-center justify-center pt-8 md:pt-0">
+<span class="font-display-hero-mobile text-display-hero-mobile text-on-surface mb-2">60K+</span>
+<span class="font-label-metadata text-label-metadata text-on-surface-variant uppercase tracking-wider">TN CARGO HANDLED</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission Section -->
+<section class="bg-surface-container-low py-24 mb-24">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="rounded-3xl overflow-hidden shadow-sm">
+<img alt="Digital network overlay on shipping containers" class="w-full h-auto object-cover aspect-square" data-alt="A striking visual metaphor combining physical shipping containers stacked neatly with a glowing, high-tech digital network overlay. The color palette emphasizes clean whites, slate greys, and vibrant red accents representing data flow. The scene is crisp, professional, and communicates the concept of digital innovation in the global supply chain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn381FEX-8kFESQIy4zMiRewetGwfmyb9Bbm4NbwYhF4uXf5YJkBZPhwlQ3KAnSPMRhEi_F8NkCS8ZOvBbmqadUUJpMDRHeW4Dau8S2yI_5AFph41yxNKcMJFqd6OmRkrfmy8LlWWTt6G1IUS1_twWCeAxagjb6ZPlwpVMx3loti6EKIZQdO5MZsaitS2gbVDnGyD2lz5YsS1VK5o-aWbU4ul-mpsdndF5aiE6xEiCFu47MD0FKf6F3e1AAhJQaECYX8M4Sd1-a2fi"/>
+</div>
+<div class="space-y-8">
+<span class="font-section-tag text-section-tag text-primary uppercase tracking-widest inline-block px-4 py-2 border border-border-soft bg-surface-container-lowest rounded-full">Our Mission</span>
+<h2 class="font-h1 text-h1 text-on-surface">DRIVING DIGITAL INNOVATION IN SHIPPING</h2>
+<div class="space-y-6 font-body text-body text-on-surface-variant">
+<p>
+                                At Logistiqo, we believe that the physical movement of goods must be matched by the seamless flow of data. Our mission is to dismantle the complexities of global freight through relentless digital innovation and uncompromising service quality.
+                            </p>
+<p>
+                                We are building a unified logistics ecosystem where transparency, speed, and reliability are not just promises, but foundational structural guarantees engineered into every route we map and every container we ship.
+                            </p>
+</div>
+<ul class="space-y-4 pt-4">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary-container/20 p-2 rounded-full">check_circle</span>
+<span class="font-label-metadata text-label-metadata text-on-surface">End-to-End Visibility</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary-container/20 p-2 rounded-full">speed</span>
+<span class="font-label-metadata text-label-metadata text-on-surface">Optimized Routing Algorithms</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary bg-primary-container/20 p-2 rounded-full">eco</span>
+<span class="font-label-metadata text-label-metadata text-on-surface">Sustainable Fleet Integration</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-inverse-surface border-t border-soft dark:border-outline-variant w-full">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="font-h2 text-h2 font-bold text-on-surface dark:text-surface-bright tracking-tight">
+                Logistiqo
+            </div>
+<div class="flex flex-wrap justify-center gap-6 font-body text-body">
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Cookie Policy</a>
+</div>
+<div class="font-body text-body text-text-muted dark:text-on-surface-variant">
+                © 2024 Logistiqo. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

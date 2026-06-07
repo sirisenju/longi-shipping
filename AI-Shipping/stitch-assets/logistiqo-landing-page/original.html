@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logistiqo - Take Your Shipping to the Next Level</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-fixed": "#87f4f0",
+                "on-surface": "#271816",
+                "primary": "#b61722",
+                "surface-variant": "#f9dcd9",
+                "error": "#ba1a1a",
+                "primary-container": "#da3437",
+                "surface-container-highest": "#f9dcd9",
+                "on-error": "#ffffff",
+                "on-tertiary-fixed": "#00201f",
+                "primary-fixed-dim": "#ffb3ad",
+                "surface-dim": "#f0d3d1",
+                "secondary-fixed-dim": "#bec6e0",
+                "error-container": "#ffdad6",
+                "inverse-on-surface": "#ffedeb",
+                "on-background": "#271816",
+                "background": "#fff8f7",
+                "on-tertiary-fixed-variant": "#00504e",
+                "surface-container": "#ffe9e7",
+                "on-primary-container": "#fffbff",
+                "outline-variant": "#e4beba",
+                "surface-container-high": "#ffe2df",
+                "on-secondary": "#ffffff",
+                "border-soft": "#E2E8F0",
+                "text-muted": "#64748B",
+                "on-tertiary": "#ffffff",
+                "tertiary-container": "#008280",
+                "secondary-container": "#dae2fd",
+                "on-secondary-fixed": "#131b2e",
+                "on-secondary-container": "#5c647a",
+                "secondary-fixed": "#dae2fd",
+                "tertiary": "#006765",
+                "surface-container-lowest": "#ffffff",
+                "inverse-surface": "#3e2c2b",
+                "on-primary": "#ffffff",
+                "on-primary-fixed-variant": "#930013",
+                "on-tertiary-container": "#f3fffd",
+                "inverse-primary": "#ffb3ad",
+                "bg-off-white": "#F8FAFC",
+                "on-primary-fixed": "#410004",
+                "on-error-container": "#93000a",
+                "secondary": "#565e74",
+                "primary-fixed": "#ffdad7",
+                "outline": "#8f6f6d",
+                "tertiary-fixed-dim": "#69d8d4",
+                "surface-container-low": "#fff0ef",
+                "surface-bright": "#fff8f7",
+                "on-secondary-fixed-variant": "#3f465c",
+                "surface-tint": "#b91a24",
+                "surface": "#fff8f7",
+                "on-surface-variant": "#5b403e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "section-padding": "5rem",
+                "margin-desktop": "2rem",
+                "margin-mobile": "1rem",
+                "container-max": "1280px",
+                "gutter": "2rem"
+        },
+        "fontFamily": {
+                "section-tag": [
+                        "Inter"
+                ],
+                "body": [
+                        "Inter"
+                ],
+                "label-metadata": [
+                        "Inter"
+                ],
+                "h2": [
+                        "Plus Jakarta Sans"
+                ],
+                "h1": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-hero-mobile": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-hero": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "section-tag": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-metadata": [
+                        "14px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "h2": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "h1": [
+                        "36px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-hero-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "display-hero": [
+                        "72px",
+                        {
+                                "lineHeight": "1.05",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ]
+        },
+        "keyframes": {
+          "marquee": {
+            "0%": { "transform": "translateX(100%)" },
+            "100%": { "transform": "translateX(-100%)" }
+          }
+        },
+        "animation": {
+          "marquee": "marquee 20s linear infinite"
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body { background-color: theme('colors.background'); }
+</style>
+</head>
+<body class="font-body text-body text-on-background antialiased relative">
+<!-- TOP APP BAR (Shared Component JSON) -->
+<nav class="fixed top-4 w-full z-50 bg-transparent no-border flat no shadows">
+<div class="max-w-container-max mx-auto flex items-center justify-between px-margin-desktop py-4 bg-white/80 dark:bg-on-surface/80 backdrop-blur-md rounded-full shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">directions_boat</span>
+<span class="font-h1 text-h2 font-bold text-on-surface dark:text-surface-bright uppercase tracking-tight">Logistiqo</span>
+</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center gap-2">
+<a class="bg-surface-container-high dark:bg-surface-container-highest rounded-full px-4 py-1 text-on-surface font-semibold hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">Discover</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">Destinations</a>
+<a class="text-on-surface-variant dark:text-surface-variant px-4 py-1 hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center">
+<button class="bg-primary text-on-primary hover:bg-on-primary-fixed-variant scale-95 duration-200 transition-all font-semibold px-6 py-2.5 rounded-full text-sm">Get Connected</button>
+</div>
+</div>
+</nav>
+<main class="pt-28 pb-20">
+<!-- HERO SECTION -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+<div class="relative w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden min-h-[600px] md:min-h-[720px] flex items-center px-8 py-16 md:px-16" data-alt="A massive cargo ship heavily loaded with colorful shipping containers navigating through deep blue ocean waters during a bright, sunny day. The image features a bright, clean, modern logistics aesthetic with high contrast, showcasing the scale and efficiency of global maritime freight operations." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnUo1ILicg5GXIjdk-3BCbYuvs4z-rICKgCvbh09URZFnu6TBpBz2BuxqWfcHS3DoLkNK7_3L2ddr51fDvbfd-BZTdw73VB0MS5abCMNiwxgPz55Wz94HPFOeSA9LIl82nje8joj9HGgo4wCBbuMOg1YPvcyDmgXPcFi7L8t6P02R2WbuL-wmm7QZ7KGQ3oTmH-QkETlqYy_k7cSyj6LkrNbpDSIFUMhSh21jC6Ptvi9p7Zaw0_zlHhaWPUrjF3528BnM4u2ORJp6R'); background-size: cover; background-position: center;">
+<!-- Overlay -->
+<div class="absolute inset-0 bg-on-surface/40 mix-blend-multiply"></div>
+<div class="relative z-10 max-w-3xl flex flex-col items-start gap-6">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-md text-on-primary font-label-metadata text-label-metadata border border-surface-container-lowest/10">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+          Best Support
+        </div>
+<h1 class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-primary uppercase text-balance">
+          Take your shipping<br/>to the next level
+        </h1>
+<p class="text-on-primary/90 text-lg md:text-xl max-w-xl font-body text-body">
+          Simplify logistics, reduce costs, and deliver faster with our all-in-one shipping management platform.
+        </p>
+<button class="mt-4 flex items-center gap-3 bg-primary text-on-primary px-8 py-4 rounded-full font-semibold hover:bg-primary-container transition-all hover:scale-95 active:scale-90 duration-200 shadow-md">
+          Let's Collaborate
+          <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+<!-- Floating Video Badge -->
+<div class="hidden lg:flex absolute bottom-12 right-12 bg-surface-container-lowest/20 backdrop-blur-lg border border-white/20 rounded-2xl p-4 items-center gap-4 text-on-primary w-64 shadow-xl">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-surface">
+<img class="w-full h-full object-cover" data-alt="Close up of a warehouse logistics operation showing blurred movement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW85Xg0oVZ9PaRLnWJTW3yT4ChGZ-yLav7BbOo07_7x7xOnzdBY30E5kWH6yyOeRsFlIrepy5fAG85RbN24lRy2bnOCa_6SFmhXTHweQcOBt9rVVR2fBDIDYcRvvKgKzvSj52iNz6ZTzrqW5dlxbgdaGAeeYBPyGHKRVwEee0DldNpM0sauRdkcwBC18UTW4ULKuz_Md89oWUA7s8lIn3HjX54nxkDGGmhrlc-pNnc0Gy7bavVFd7P6QNzBKwY0uc1S2ernTYAE8-h"/>
+<div class="absolute inset-0 flex items-center justify-center bg-on-surface/30">
+<span class="material-symbols-outlined text-on-primary text-2xl" data-weight="fill">play_arrow</span>
+</div>
+</div>
+<div>
+<p class="font-semibold text-sm">See how we work.</p>
+<p class="text-xs opacity-75 mt-1">01 / 04</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ABOUT US SECTION -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter">
+<div class="lg:col-span-4 flex items-start">
+<div class="flex flex-col gap-2">
+<span class="font-section-tag text-section-tag text-text-muted">// ABOUT US //</span>
+</div>
+</div>
+<div class="lg:col-span-8 flex flex-col gap-12">
+<h2 class="font-h1 text-h1 text-on-surface leading-tight">
+        At LOGISTIQO, We combine logistics expertise and digital innovation to deliver cargo with speed, confidence, and impact worldwide.
+      </h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8 pt-8 border-t border-border-soft">
+<div class="flex flex-col gap-1">
+<span class="font-h1 text-h1 text-on-surface">15+ <span class="text-text-muted">YR</span></span>
+<span class="font-label-metadata text-label-metadata text-text-muted">of shipping expertise</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-h1 text-h1 text-on-surface">30+ <span class="text-text-muted">CO</span></span>
+<span class="font-label-metadata text-label-metadata text-text-muted">Countries Covered</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-h1 text-h1 text-on-surface">60K+ <span class="text-text-muted">TN</span></span>
+<span class="font-label-metadata text-label-metadata text-text-muted">Cargo handled worldwide</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SERVICES SHOWCASE SECTION -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-2 mb-8">
+<span class="font-section-tag text-section-tag text-text-muted">// OUR SERVICES //</span>
+<h2 class="font-h1 text-h1 text-on-surface uppercase">Explore Our Services</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="group relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Modern logistics warehouse interior with rows of high shelving and forklifts operating." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDTiMY-4jtLcwL7aMu2NmPes6vGNt6jnLrTb-ar3YjV_VE7cvh2UaX1gREy9CnPmha9DLtnQbBWrRgd3OTxJIvIIv8G9-2GFQi1rCNTIuV4jrdwJhRwcURTX4TU4HwaHR44LDvqDi9eXIaGXWne4_jQIjcB4FQpYN1FHC5eM5dHS_1MEQb2VHmx8wWkW9cTJm9caXutmL3x3TKQoiQsBYY_UF_PGTtvk1_09snSaMkokQZnOE8w_xKuutMGG3FxDGXS_ItiyuxPCDT-');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-3">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-lg mb-2 group-hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined">warehouse</span>
+</div>
+<h3 class="font-h2 text-h2 text-on-primary">Warehousing</h3>
+<p class="font-body text-body text-on-primary/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Secure, scalable storage solutions for all your inventory needs.</p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="group relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Large cargo ship on the ocean carrying colorful shipping containers." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAaRR_l10Jt-160d_uwyS5fQw5zG3jmm3z7-zBgNWeCE1Y2QLErlo8UuoOKSICtKtVoeb0HZOeuYAxJlc27PcQvakPn-supuReNQA2dNLtWX7pAC3sy46EHrFSS8LQ5y6LZDEzv5gQwMu7wiB2oVDWkIpKPPS85AGgxNNrFO-d9qCyTj5kKyIvkBnvXiea39ajFycDI0pMD-5pxue0Mv593Q5IQd26tOku8DSii6FaEd3j9aRHLDqspKBHJWy_LsVG1t0xvdkIQbfVX');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-3">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-lg mb-2 group-hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined">directions_boat</span>
+</div>
+<h3 class="font-h2 text-h2 text-on-primary">Ocean Freight</h3>
+<p class="font-body text-body text-on-primary/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Cost-effective global shipping with reliable transit times.</p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="group relative rounded-3xl overflow-hidden aspect-[4/5] cursor-pointer">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Cargo plane being loaded with freight at an airport runway at dusk." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCOMxpebsDZB7IoG1qEz0r9peNe6fxrE2l0UJkrYguC-dxxzr6fBDuvMNT8AwvYvT2Fy5xN717pf84VPaXuUg0pH9jgE1Y2A93u6tHingPnHbHXXgPbAk2VvxzX2bVQ0sxWhlSqXOMHoSKN-W07kugxh5fpnQmf7cCswZWBxzF2N5fq4NYHF9tCa5oDhBKRvVl4OAusUX7aeA07_6e-z6tMO4QWzYpNgACZBW_tE43SrbJKC03bEe8cntpD-uOl82LL7hvju1elZlxw');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 flex flex-col gap-3">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-lg mb-2 group-hover:-translate-y-2 transition-transform duration-300">
+<span class="material-symbols-outlined">flight_takeoff</span>
+</div>
+<h3 class="font-h2 text-h2 text-on-primary">Air Transport</h3>
+<p class="font-body text-body text-on-primary/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-4 group-hover:translate-y-0">Expedited shipping when speed is your top priority.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURES / WHY CHOOSE US -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
+<div class="bg-surface-container-high rounded-[2rem] p-8 md:p-12 grid grid-cols-1 lg:grid-cols-2 gap-12 overflow-hidden relative">
+<!-- Background Graphic Overlay -->
+<div class="absolute inset-0 w-full h-full opacity-30 pointer-events-none" style="background-image: radial-gradient(circle at top right, theme('colors.primary-container'), transparent 40%);"></div>
+<div class="flex flex-col justify-between z-10 relative">
+<div>
+<span class="font-section-tag text-section-tag text-primary mb-4 block">// WHY CHOOSE US //</span>
+<h2 class="font-h1 text-h1 text-on-surface uppercase max-w-md">Why Businesses Choose Us For Their Logistics &amp; Shipping</h2>
+</div>
+<div class="mt-12 lg:mt-0">
+<button class="inline-flex items-center gap-2 bg-surface-container-lowest text-on-surface px-6 py-3 rounded-full font-semibold shadow-sm hover:shadow-md transition-shadow">
+            Get a Quote <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-4 z-10 relative">
+<!-- Feature Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-border-soft flex gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<h3 class="font-h2 text-h2 text-on-surface text-lg mb-2">Fast &amp; Secure Delivery</h3>
+<p class="font-body text-body text-text-muted text-sm">We prioritize speed and safety, making sure your goods arrive on time and in perfect condition.</p>
+</div>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-border-soft flex gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<h3 class="font-h2 text-h2 text-on-surface text-lg mb-2">Custom Shipping Plans</h3>
+<p class="font-body text-body text-text-muted text-sm">Every business is different. We tailor logistics strategies that fit your timeline, budget, and requirements.</p>
+</div>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-2xl shadow-sm border border-border-soft flex gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h3 class="font-h2 text-h2 text-on-surface text-lg mb-2">24/7 Tracking &amp; Support</h3>
+<p class="font-body text-body text-text-muted text-sm">Stay informed with real-time shipment tracking and round-the-clock customer assistance.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TESTIMONIALS SECTION -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<div class="font-display-hero-mobile text-display-hero-mobile md:font-display-hero md:text-display-hero text-on-surface mb-6 leading-none">
+<span class="text-primary">+99%</span><br/>
+        Achieving Excellence Every Time
+      </div>
+</div>
+<div class="flex flex-col gap-8">
+<p class="font-h2 text-h2 text-on-surface italic leading-relaxed">
+        "Working with Boulevard felt less like building with a creative partner. Every visual, every word-just hit right."
+      </p>
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 rounded-full overflow-hidden bg-surface-container">
+<img alt="David Wilson" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1V7lPnKx-Lipl-pVWaUA4QQVFhq-5TBWMPO24rU5grMG7cNybkK6LXCBXMak3-G_Oy1WIV3ltvRvvi2NE9W7sy8xoQ7zINelAhaN0AGS6OsmvPPN4KDfvA-Wlsm2TJg_n2L2mMMMIDTaehPyClxN7TV2lPdmGw_LZZnb8S-WGQuHmNyIVLPl7v6f9A_L8Q9hhU0IEkmH74AX8qvFURS6sSMNS98htNOht73sAHwKSb6r7GOR0jGXAVmPOr_Qav6SuqLFCBGz2fwe1"/>
+</div>
+<div>
+<h4 class="font-h2 text-lg font-bold text-on-surface">David Wilson</h4>
+<p class="font-body text-text-muted text-sm">Business Consultant</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Logo Marquee -->
+<div class="mt-20 pt-10 border-t border-border-soft overflow-hidden relative w-full">
+<div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10"></div>
+<div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10"></div>
+<div class="flex items-center gap-16 whitespace-nowrap animate-marquee w-[200%]">
+<!-- Logos Set 1 -->
+<div class="flex items-center gap-16 min-w-full justify-around opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Sisyphus</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Magnolia</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Epicurious</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Sisyphus</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Magnolia</span>
+</div>
+<!-- Logos Set 2 (for seamless loop) -->
+<div class="flex items-center gap-16 min-w-full justify-around opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Sisyphus</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Magnolia</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Epicurious</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Sisyphus</span>
+<span class="font-h1 text-2xl font-bold tracking-widest uppercase">Magnolia</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ SECTION -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-32 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<div class="lg:col-span-4">
+<span class="font-section-tag text-section-tag text-text-muted mb-4 block">// FAQ //</span>
+<h2 class="font-h1 text-h1 text-on-surface uppercase">Frequently Asked Questions</h2>
+</div>
+<div class="lg:col-span-8 flex flex-col divide-y divide-border-soft">
+<!-- Accordion Item 1 (Open) -->
+<div class="py-6 group">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="w-6 h-6 rounded-full bg-on-surface text-surface-container-lowest flex items-center justify-center text-xs font-bold">1</span>
+<h3 class="font-h2 text-h2 text-on-surface text-lg">What services does LOGISTIQO provide?</h3>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">remove</span>
+</div>
+<div class="mt-4 pl-10 pr-4">
+<p class="font-body text-body text-text-muted">We offer full-service logistics solutions including ocean freight, air cargo, road transport, warehousing, and customs clearance.</p>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="py-6 group">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center text-xs font-bold">2</span>
+<h3 class="font-h2 text-h2 text-on-surface text-lg">Do you handle international shipments?</h3>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">add</span>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="py-6 group">
+<div class="flex items-center justify-between cursor-pointer">
+<div class="flex items-center gap-4">
+<span class="w-6 h-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center text-xs font-bold">3</span>
+<h3 class="font-h2 text-h2 text-on-surface text-lg">How do I track my shipment?</h3>
+</div>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors">add</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA FOOTER BANNER -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12">
+<div class="bg-on-surface text-on-primary rounded-[2rem] overflow-hidden relative p-12 md:p-24 flex flex-col items-center text-center">
+<div class="absolute inset-0 opacity-20 bg-cover bg-center" data-alt="A moody, high-contrast aerial view of a busy commercial seaport at dusk with glowing lights, depicting global supply chain operations." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC7eu8f3dSdB_u2w04Y8reEl4Qb04UtZzrdNjzfAxxu53JFRV2QXmCohBUeZFYynN3GPfazKQUulHdJo3YexaioL6BM03iT75W4GpABhsLkOAZhlarcGeSqT4_mZNgBRGObDs0rV_QTLMZdqRFcpuqbAYD-WfX8dpbH21_sRXI5D4VuYBYOoCMAV8DFd-FymAJ4tsB8287Cr8o47vLNfLhJiix8-NlMCeKTErZEHrs8YZp9_pSSzH5Q7Mn604d2Ct1rD8QUNVGYwhpw');"></div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-display-hero-mobile text-display-hero-mobile md:font-h1 md:text-h1 uppercase mb-6">Ready to move your business forward?</h2>
+<p class="font-body text-body opacity-80 mb-8">From planning to delivery, our logistics experts are here to simplify your supply chain and keep your business moving.</p>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-bold hover:bg-primary-container transition-all hover:scale-95 duration-200">
+          Get Started Now
+        </button>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Component JSON) -->
+<footer class="bg-surface dark:bg-inverse-surface border-t border-soft dark:border-outline-variant flat no shadows full-width text-primary dark:text-inverse-primary font-body text-body">
+<div class="max-w-container-max mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-weight="fill">directions_boat</span>
+<span class="font-h2 text-h2 font-bold text-on-surface dark:text-surface-bright uppercase">Logistiqo</span>
+</div>
+<div class="flex flex-wrap items-center gap-6 justify-center">
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="text-text-muted dark:text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Cookie Policy</a>
+</div>
+<div class="text-text-muted dark:text-on-surface-variant text-sm">
+      © 2024 Logistiqo. All rights reserved.
+    </div>
+</div>
+</footer>
+</body></html>
