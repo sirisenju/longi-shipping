@@ -41,9 +41,9 @@ export default function Features() {
               </h2>
             </div>
             <div className="mt-8 lg:mt-0">
-              <button className="inline-flex items-center gap-2 bg-white text-[#271816] px-6 py-3 rounded-full font-semibold shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+              <button className="inline-flex items-center gap-1.5 bg-white text-[#271816] px-4 py-2 rounded-lg text-xs font-semibold shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                 Get a Quote
-                <span className="material-symbols-outlined text-sm">north_east</span>
+                <span className="material-symbols-outlined text-[16px]">north_east</span>
               </button>
             </div>
           </div>

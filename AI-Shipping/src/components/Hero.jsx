@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import heroBg from '../assets/logistiqo/hero-bg.jpg';
 import videoThumb from '../assets/logistiqo/floating-video-thumb.jpg';
 
 export default function Hero() {
+  const navigate = useNavigate();
   const [trackingId, setTrackingId] = useState('');
-  const [trackingStatus, setTrackingStatus] = useState('');
 
   const handleTrack = (e) => {
     e.preventDefault();
-    if (!trackingId.trim()) {
-      setTrackingStatus('Please enter a valid tracking ID.');
-      return;
-    }
-    setTrackingStatus(`Tracking ID ${trackingId}: Cargo in transit - Port of Rotterdam.`);
-    setTimeout(() => {
-      setTrackingStatus('');
-      setTrackingId('');
-    }, 6000);
+    if (!trackingId.trim()) return;
+    navigate(`/track?id=${encodeURIComponent(trackingId.trim())}`);
   };
   return (
     <section id="home" className="w-full mb-24">
@@ -62,12 +56,6 @@ export default function Hero() {
                   <span className="material-symbols-outlined text-[20px]">search</span>
                 </button>
               </div>
-              {trackingStatus && (
-                <div className="text-[#ffe2df] text-xs font-['Inter'] mt-1 bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/10 self-start flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#da3437] animate-ping" />
-                  <span>{trackingStatus}</span>
-                </div>
-              )}
             </form>
           </div>
         </div>

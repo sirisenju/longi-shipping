@@ -16,6 +16,7 @@ import AboutPage from './pages/AboutPage';
 import DiscoverPage from './pages/DiscoverPage';
 import DestinationsPage from './pages/DestinationsPage';
 import ContactPage from './pages/ContactPage';
+import TrackingPage from './pages/TrackingPage';
 
 const WRAPPER = "font-['Inter'] text-base text-[#271816] antialiased min-h-screen bg-[#fff8f7]";
 
@@ -53,6 +54,7 @@ function App() {
         <Route path="/discover" element={<DiscoverPage />} />
         <Route path="/destinations" element={<DestinationsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/track" element={<TrackingPage />} />
       </Routes>
       <Footer />
     </div>

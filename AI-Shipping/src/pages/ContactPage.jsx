@@ -273,11 +273,11 @@ export default function ContactPage() {
 
                     <div className="pt-2">
                       <button
-                        className="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-[#b61722] text-white px-8 py-4 rounded-full font-['Inter'] text-[14px] font-semibold tracking-[0.05em] hover:bg-[#930013] transition-all hover:scale-95 active:scale-90 duration-300 shadow-sm hover:shadow-md cursor-pointer group"
+                        className="w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[#b61722] text-white px-5 py-2.5 rounded-lg font-['Inter'] text-xs font-semibold tracking-[0.05em] hover:bg-[#930013] transition-all hover:scale-95 active:scale-90 duration-300 shadow-sm hover:shadow-md cursor-pointer group"
                         type="submit"
                       >
                         <span>Send Message</span>
-                        <span className="material-symbols-outlined text-[20px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                        <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
                           arrow_outward
                         </span>
                       </button>

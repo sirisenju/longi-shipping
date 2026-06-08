@@ -119,9 +119,9 @@ export default function DiscoverPage() {
                   Curated resources for logistics professionals.
                 </p>
               </div>
-              <button className="hidden md:flex items-center gap-2 text-[#b61722] font-['Inter'] text-[14px] font-semibold tracking-wider hover:text-[#da3437] transition-colors">
+              <button className="hidden md:flex items-center gap-1.5 text-[#b61722] font-['Inter'] text-xs font-semibold tracking-wider hover:text-[#da3437] transition-colors">
                 View All
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
               </button>
             </div>
           </ScrollReveal>
@@ -169,9 +169,9 @@ export default function DiscoverPage() {
           </ScrollReveal>
 
           {/* Mobile "View All" */}
-          <button className="md:hidden mt-8 w-full flex items-center justify-center gap-2 text-[#b61722] font-['Inter'] text-[14px] font-semibold py-4 border border-[#E2E8F0] rounded-full hover:bg-[#fff8f7] transition-colors">
+          <button className="md:hidden mt-6 w-full flex items-center justify-center gap-1.5 text-[#b61722] font-['Inter'] text-xs font-semibold py-2.5 border border-[#E2E8F0] rounded-lg hover:bg-[#fff8f7] transition-colors">
             View All Resources
-            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
           </button>
         </div>
       </section>
@@ -200,14 +200,14 @@ export default function DiscoverPage() {
             {/* Right: form */}
             <div className="w-full md:w-1/2 z-10">
               <form
-                className="flex flex-col sm:flex-row gap-3"
+                className="flex flex-col sm:flex-row gap-2.5 items-stretch"
                 onSubmit={(e) => e.preventDefault()}
               >
                 <div className="flex-grow">
                   <label className="sr-only" htmlFor="discover-email">Email address</label>
                   <input
                     id="discover-email"
-                    className="w-full px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/50 focus:border-[#ffdad7] focus:ring-1 focus:ring-[#ffdad7] outline-none font-['Inter'] transition-colors"
+                    className="w-full px-4 py-2.5 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:border-[#ffdad7] focus:ring-1 focus:ring-[#ffdad7] outline-none font-['Inter'] text-sm transition-colors"
                     placeholder="Enter your business email"
                     type="email"
                     value={email}
@@ -216,10 +216,10 @@ export default function DiscoverPage() {
                 </div>
                 <button
                   type="submit"
-                  className="rounded-full bg-[#b61722] hover:bg-[#da3437] text-white px-8 py-4 font-['Inter'] text-[14px] font-semibold tracking-wider flex items-center justify-center gap-2 whitespace-nowrap shadow-lg transition-colors active:scale-95 duration-200 cursor-pointer"
+                  className="rounded-lg bg-[#b61722] hover:bg-[#da3437] text-white px-5 py-2.5 font-['Inter'] text-xs font-semibold tracking-wider flex items-center justify-center gap-1.5 whitespace-nowrap shadow-sm transition-colors active:scale-95 duration-200 cursor-pointer"
                 >
                   Subscribe
-                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </button>
               </form>
               <p className="text-[#f9dcd9]/50 text-xs mt-3 font-['Inter'] text-center md:text-left">

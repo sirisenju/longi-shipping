@@ -54,9 +54,9 @@ export default function Navbar() {
 
         {/* CTA + Hamburger */}
         <div className="flex items-center gap-3">
-          <button className="hidden sm:flex bg-[#b61722] text-white hover:bg-[#930013] duration-200 transition-all font-semibold px-6 py-2.5 rounded-full text-sm cursor-pointer items-center gap-2">
+          <button className="hidden sm:flex bg-[#b61722] text-white hover:bg-[#930013] duration-200 transition-all font-semibold px-4 py-1.5 rounded-lg text-xs cursor-pointer items-center gap-1.5">
             Get Connected
-            <span className="material-symbols-outlined text-[18px]">arrow_outward</span>
+            <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
           </button>
           <button
             className="md:hidden w-10 h-10 rounded-full flex items-center justify-center bg-[#ffe2df] text-[#271816] cursor-pointer"
@@ -82,9 +82,9 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-          <button className="sm:hidden mt-2 bg-[#b61722] text-white hover:bg-[#930013] duration-200 transition-all font-semibold px-6 py-3 rounded-full text-sm cursor-pointer flex items-center justify-center gap-2">
+          <button className="sm:hidden mt-2 bg-[#b61722] text-white hover:bg-[#930013] duration-200 transition-all font-semibold px-4 py-2 rounded-lg text-xs cursor-pointer flex items-center justify-center gap-1.5">
             Get Connected
-            <span className="material-symbols-outlined text-[18px]">arrow_outward</span>
+            <span className="material-symbols-outlined text-[16px]">arrow_outward</span>
           </button>
         </div>
       )}

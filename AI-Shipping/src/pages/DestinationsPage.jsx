@@ -86,9 +86,9 @@ export default function DestinationsPage() {
                   Strategic locations anchoring our global supply chain infrastructure, equipped with state-of-the-art handling capabilities.
                 </p>
               </div>
-              <button className="flex items-center gap-2 text-[#b61722] font-['Inter'] text-[14px] font-semibold tracking-[0.05em] hover:text-[#da3437] transition-colors self-start md:self-auto">
+              <button className="flex items-center gap-1.5 text-[#64748B] hover:text-[#b61722] font-['Inter'] text-xs font-semibold tracking-[0.05em] transition-colors self-start md:self-auto">
                 View Full Directory 
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
               </button>
             </div>
           </ScrollReveal>

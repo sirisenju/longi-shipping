@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="font-['Inter'] text-base opacity-80 mb-8 max-w-lg mx-auto leading-relaxed">
               From planning to delivery, our logistics experts are here to simplify your supply chain and keep your business moving.
             </p>
-            <button className="bg-[#b61722] text-white px-8 py-4 rounded-full font-bold hover:bg-[#da3437] transition-all hover:scale-95 duration-200 cursor-pointer">
+            <button className="bg-[#b61722] text-white px-5 py-2.5 rounded-lg text-xs font-semibold hover:bg-[#da3437] transition-all hover:scale-95 duration-200 cursor-pointer">
               Get Started Now
             </button>
           </div>
