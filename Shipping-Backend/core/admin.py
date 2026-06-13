@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import Cargo, TrackingHistory
+from .models import Cargo, TrackingHistory, CargoItem
 
 class TrackingHistoryInline(admin.TabularInline):
     model = TrackingHistory
+    extra = 1
+
+class CargoItemInline(admin.TabularInline):
+    model = CargoItem
     extra = 1
 
 @admin.register(Cargo)
@@ -11,7 +15,7 @@ class CargoAdmin(admin.ModelAdmin):
     search_fields = ('tracking_number', 'receiver_name', 'sender_name')
     list_filter = ('created_at',)
     readonly_fields = ('tracking_number', 'created_at', 'id')
-    inlines = [TrackingHistoryInline]
+    inlines = [TrackingHistoryInline, CargoItemInline]
 
     def get_readonly_fields(self, request, obj=None):
         if obj:

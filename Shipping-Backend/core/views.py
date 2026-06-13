@@ -3,7 +3,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from .models import Cargo
-from .serializers import CargoSerializer
+from .serializers import CargoSerializer, ContactMessageSerializer
+from .tasks import send_contact_email_task
 
 class TrackCargoView(APIView):
     permission_classes = [AllowAny]
@@ -30,3 +31,25 @@ class TrackCargoView(APIView):
                 {"error": "Tracking number not found."},
                 status=status.HTTP_404_NOT_FOUND
             )
+
+class ContactMessageView(APIView):
+    permission_classes = [AllowAny]
+
+    def post(self, request, *args, **kwargs):
+        serializer = ContactMessageSerializer(data=request.data)
+        if serializer.is_valid():
+            data = serializer.validated_data
+            # Dispatch Celery background task
+            send_contact_email_task.delay(
+                name=data.get('name'),
+                email=data.get('email'),
+                company=data.get('company', ''),
+                service=data.get('service', ''),
+                message=data.get('message')
+            )
+            return Response(
+                {"message": "Thank you for contacting us. Your message has been sent successfully."},
+                status=status.HTTP_200_OK
+            )
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+

@@ -18,6 +18,8 @@ class Cargo(models.Model):
     destination = models.TextField()
     weight = models.DecimalField(max_digits=6, decimal_places=2)
     estimated_delivery = models.DateField()
+    shipping_fee = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
+    insurance_fee = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def save(self, *args, **kwargs):
@@ -30,6 +32,19 @@ class Cargo(models.Model):
 
     def __str__(self):
         return f"{self.tracking_number} - {self.receiver_name}"
+
+class CargoItem(models.Model):
+    id = models.AutoField(primary_key=True)
+    cargo = models.ForeignKey(Cargo, on_delete=models.CASCADE, related_name='items')
+    name = models.CharField(max_length=255)
+    quantity = models.PositiveIntegerField(default=1)
+    weight = models.DecimalField(max_digits=8, decimal_places=2) # unit weight in kg
+    price = models.DecimalField(max_digits=10, decimal_places=2) # unit price in USD
+    condition = models.CharField(max_length=100, default='Excellent')
+
+    def __str__(self):
+        return f"{self.quantity}x {self.name} ({self.cargo.tracking_number})"
+
 
 class TrackingHistory(models.Model):
     class StatusChoices(models.TextChoices):
