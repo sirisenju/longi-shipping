@@ -11,28 +11,50 @@ export default function ContactPage() {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate API call
-    console.log('Contact form submitted:', formData);
-    setSubmitted(true);
-    // Reset form after a delay
-    setTimeout(() => {
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        service: '',
-        message: ''
+    setSubmitting(true);
+    setSubmitError(null);
+    try {
+      const response = await fetch('http://localhost:8000/api/v1/contact/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setSubmitted(false);
-    }, 4000);
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const errMessage = data.message || Object.values(data).flat().join(', ') || 'Failed to submit contact message. Please try again.';
+        throw new Error(errMessage);
+      }
+
+      setSubmitted(true);
+      // Reset form after a delay
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          service: '',
+          message: ''
+        });
+        setSubmitted(false);
+      }, 4000);
+    } catch (err) {
+      setSubmitError(err.message || 'An error occurred while transmitting your message.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -271,15 +293,32 @@ export default function ContactPage() {
                       ></textarea>
                     </div>
 
+                    {submitError && (
+                      <div className="p-4 rounded-lg bg-red-50 text-red-700 text-xs font-['Inter'] border border-red-100 flex items-center gap-2">
+                        <span className="material-symbols-outlined text-[16px] text-red-500">error</span>
+                        <span>{submitError}</span>
+                      </div>
+                    )}
+
                     <div className="pt-2">
                       <button
-                        className="w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[#b61722] text-white px-5 py-2.5 rounded-lg font-['Inter'] text-xs font-semibold tracking-[0.05em] hover:bg-[#930013] transition-all hover:scale-95 active:scale-90 duration-300 shadow-sm hover:shadow-md cursor-pointer group"
+                        className="w-full md:w-auto inline-flex items-center justify-center gap-1.5 bg-[#b61722] text-white px-5 py-2.5 rounded-lg font-['Inter'] text-xs font-semibold tracking-[0.05em] hover:bg-[#930013] transition-all hover:scale-95 active:scale-90 duration-300 shadow-sm hover:shadow-md cursor-pointer group disabled:opacity-50 disabled:scale-100 disabled:cursor-not-allowed"
                         type="submit"
+                        disabled={submitting}
                       >
-                        <span>Send Message</span>
-                        <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
-                          arrow_outward
-                        </span>
+                        {submitting ? (
+                          <>
+                            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                            <span>Sending...</span>
+                          </>
+                        ) : (
+                          <>
+                            <span>Send Message</span>
+                            <span className="material-symbols-outlined text-[16px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                              arrow_outward
+                            </span>
+                          </>
+                        )}
                       </button>
                     </div>
                   </form>
