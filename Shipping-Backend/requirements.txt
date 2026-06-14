@@ -4,3 +4,6 @@ django-cors-headers
 django-environ
 celery
 redis
+gunicorn
+whitenoise
+psycopg2-binary
