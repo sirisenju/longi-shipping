@@ -1,7 +1,7 @@
 import React from 'react';
 import ScrollReveal from './ScrollReveal';
 import CountUp from './CountUp';
-import avatarDavid from '../assets/logistiqo/avatar-david-wilson.jpg';
+import avatarDavid from '../assets/logistiqo/user.jpg';
 
 const logos = ['Sisyphus', 'Magnolia', 'Epicurious', 'Sisyphus', 'Magnolia'];
 

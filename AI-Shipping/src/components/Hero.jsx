@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import heroBg from '../assets/logistiqo/hero-bg.jpg';
+import heroBg from '../assets/logistiqo/heroBg.jpg';
 import videoThumb from '../assets/logistiqo/floating-video-thumb.jpg';
 
 export default function Hero() {

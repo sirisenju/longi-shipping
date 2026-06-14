@@ -1,11 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
 import CountUp from '../components/CountUp';
-import destinationsHero from '../assets/logistiqo/destinations-hero.jpg';
+import destinationsHero from '../assets/logistiqo/chinaPort.jpg';
 import hubRotterdam from '../assets/logistiqo/hub-rotterdam.jpg';
 import hubSingapore from '../assets/logistiqo/hub-singapore.jpg';
+import aboutHero from '../assets/logistiqo/about-hero.jpg';
+
+const PORTS_SLIDER = [
+  { name: 'Shanghai, CHN', img: destinationsHero },
+  { name: 'Rotterdam, NLD', img: hubRotterdam },
+  { name: 'Singapore, SGP', img: hubSingapore },
+  { name: 'Hamburg, DEU', img: aboutHero },
+];
 
 export default function DestinationsPage() {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const duration = 6000; // 4 seconds per slide
+    const intervalTime = 80; // tick every 50ms
+    const step = (intervalTime / duration) * 100;
+
+    const timer = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 100) {
+          setSlideIndex((prevIndex) => (prevIndex + 1) % PORTS_SLIDER.length);
+          return 0;
+        }
+        return prev + step;
+      });
+    }, intervalTime);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <main className="pb-16 min-h-screen">
       
@@ -47,23 +75,50 @@ export default function DestinationsPage() {
           {/* Stat badge card */}
           <div className="md:col-span-4 w-full max-w-sm justify-self-center md:justify-self-end">
             <ScrollReveal delay={250}>
-              <div className="relative w-full aspect-square rounded-[24px] bg-white border border-[#E2E8F0] shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden p-6 flex flex-col justify-between">
-                <div className="flex justify-between items-start">
-                  <div className="w-12 h-12 rounded-full bg-[#ffe2df] flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[#b61722]" style={{ fontVariationSettings: "'FILL' 1" }}>
+              <div className="relative w-full aspect-square rounded-[24px] overflow-hidden shadow-lg border border-[#E2E8F0] bg-[#fff8f7]">
+                {/* Background images (cross-fade) */}
+                {PORTS_SLIDER.map((port, idx) => (
+                  <img
+                    key={port.name}
+                    alt={port.name}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                      idx === slideIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                    src={port.img}
+                  />
+                ))}
+
+                {/* Top Row: Floating glass buttons */}
+                <div className="absolute top-4 left-4 right-4 flex justify-between items-center z-10">
+                  <div className="w-10 h-10 rounded-full bg-white/85 backdrop-blur-md border border-white/50 flex items-center justify-center text-[#b61722] shadow-sm">
+                    <span className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>
                       public
                     </span>
                   </div>
-                  <span className="font-['Plus_Jakarta_Sans'] text-[24px] font-semibold text-[#271816]">
-                    <CountUp end={120} suffix="+" />
-                  </span>
+                  <div className="bg-white/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/50 shadow-sm flex items-center gap-1">
+                    <span className="font-['Plus_Jakarta_Sans'] text-[14px] font-bold text-[#271816]">
+                      <CountUp end={120} suffix="+" />
+                    </span>
+                    <span className="font-['Inter'] text-[10px] font-medium text-[#64748B] uppercase">Ports</span>
+                  </div>
                 </div>
-                <div>
-                  <p className="font-['Inter'] text-[14px] font-semibold tracking-[0.05em] text-[#64748B] uppercase mb-2">
-                    Active Ports
-                  </p>
+
+                {/* Bottom Row: Active Port Glass Panel */}
+                <div className="absolute bottom-0 left-0 right-0 bg-white/85 backdrop-blur-md border-t border-white/50 p-4 rounded-b-[24px] z-10 flex flex-col justify-between">
+                  <div className="mb-2">
+                    <span className="block font-['Inter'] text-[9px] font-bold tracking-[0.08em] text-[#b61722] uppercase">
+                      Active Port
+                    </span>
+                    <h3 className="font-['Plus_Jakarta_Sans'] text-base font-bold text-[#271816] tracking-tight truncate">
+                      {PORTS_SLIDER[slideIndex].name}
+                    </h3>
+                  </div>
+                  {/* Red progress bar showing duration/transition */}
                   <div className="h-1.5 w-full bg-[#ffe2df] rounded-full overflow-hidden">
-                    <div className="h-full bg-[#b61722] w-3/4 rounded-full"></div>
+                    <div
+                      className="h-full bg-[#b61722] rounded-full transition-all duration-75"
+                      style={{ width: `${progress}%` }}
+                    ></div>
                   </div>
                 </div>
               </div>

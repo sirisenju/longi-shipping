@@ -19,53 +19,67 @@ const missionPoints = [
 
 export default function AboutPage() {
   return (
-    <main className="pt-32 pb-16">
+    <main className="pb-16 min-h-screen">
 
       {/* ── Hero Section ── */}
-      <section className="max-w-[1280px] mx-auto px-4 md:px-8 mb-16">
-        <ScrollReveal>
-          <div className="flex flex-col md:flex-row gap-12 items-center">
+      <section className="relative pt-32 pb-16 px-4 md:px-8 overflow-hidden min-h-[500px] flex items-center mb-16">
+        {/* Background Image Effect */}
+        <div className="absolute inset-0 z-0">
+          <div className="w-full h-full bg-[#ffffff]">
+            <img
+              alt="High-contrast logistics facility background"
+              className="w-full h-full object-cover opacity-15 mix-blend-luminosity"
+              src={aboutHero}
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fff8f7] via-[#fff8f7]/80 to-transparent"></div>
+        </div>
 
-            {/* Left: text */}
-            <div className="w-full md:w-5/12 flex flex-col justify-center space-y-6">
-              <span className="font-['Inter'] text-[12px] leading-none tracking-[0.15em] font-semibold text-[#b61722] uppercase inline-block px-4 py-2 border border-[#E2E8F0] rounded-full self-start bg-white shadow-sm">
-                Our Origin
-              </span>
-              <h1 className="font-['Plus_Jakarta_Sans'] text-[36px] sm:text-[48px] md:text-[72px] leading-[1.05] tracking-[-0.02em] font-extrabold text-[#271816]">
-                LOGISTICS<br />EXPERTISE<br />REIMAGINED
-              </h1>
-              <p className="font-['Inter'] text-base text-[#5b403e] leading-relaxed max-w-md">
-                We are engineering the future of global supply chains. By merging industrial reliability with high-performance digital systems, we move the world forward with precision.
-              </p>
-              <Link
-                to="/"
-                className="inline-flex items-center gap-2 text-[#b61722] font-semibold hover:underline self-start"
-              >
-                <span className="material-symbols-outlined text-sm">arrow_back</span>
-                Back to Home
-              </Link>
-            </div>
+        {/* Content Container (z-10 on top of background) */}
+        <div className="max-w-[1280px] mx-auto w-full relative z-10">
+          <ScrollReveal>
+            <div className="flex flex-col md:flex-row gap-12 items-center">
+              {/* Left: text */}
+              <div className="w-full md:w-5/12 flex flex-col justify-center space-y-6">
+                <span className="font-['Inter'] text-[12px] leading-none tracking-[0.15em] font-semibold text-[#b61722] uppercase inline-block px-4 py-2 border border-[#E2E8F0] rounded-full self-start bg-white shadow-sm">
+                  Our Origin
+                </span>
+                <h1 className="font-['Plus_Jakarta_Sans'] text-[36px] sm:text-[48px] md:text-[72px] leading-[1.05] tracking-[-0.02em] font-extrabold text-[#271816]">
+                  LOGISTICS<br />EXPERTISE<br />REIMAGINED
+                </h1>
+                <p className="font-['Inter'] text-base text-[#5b403e] leading-relaxed max-w-md">
+                  We are engineering the future of global supply chains. By merging industrial reliability with high-performance digital systems, we move the world forward with precision.
+                </p>
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-2 text-[#b61722] font-semibold hover:underline self-start"
+                >
+                  <span className="material-symbols-outlined text-sm">arrow_back</span>
+                  Back to Home
+                </Link>
+              </div>
 
-            {/* Right: image */}
-            <div className="w-full md:w-7/12 relative">
-              <div className="rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/10] shadow-sm relative group">
-                <img
-                  alt="A modern high-tech logistics distribution center"
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
-                  src={aboutHero}
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                {/* Caption badge */}
-                <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
-                  <p className="font-['Inter'] text-[14px] font-semibold tracking-wider text-white">
-                    Advanced Digital Orchestration Facility
-                  </p>
+              {/* Right: image */}
+              <div className="w-full md:w-7/12 relative">
+                <div className="rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[16/10] shadow-sm relative group">
+                  <img
+                    alt="A modern high-tech logistics distribution center"
+                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                    src={aboutHero}
+                  />
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  {/* Caption badge */}
+                  <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
+                    <p className="font-['Inter'] text-[14px] font-semibold tracking-wider text-white">
+                      Advanced Digital Orchestration Facility
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* ── Stats Section ── */}

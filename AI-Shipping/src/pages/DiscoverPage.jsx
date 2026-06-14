@@ -39,34 +39,47 @@ export default function DiscoverPage() {
   const [email, setEmail] = useState('');
 
   return (
-    <main className="flex-grow pt-[120px] pb-10">
+    <main className="flex-grow pb-10">
 
       {/* ── Hero / Intro ── */}
-      <section className="max-w-[1280px] mx-auto px-4 md:px-8 py-10">
-        <ScrollReveal>
-          <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">
-            <span className="font-['Inter'] text-[12px] leading-none tracking-[0.15em] font-semibold text-[#b61722] uppercase">
-              // Resource Hub //
-            </span>
-            <h1 className="font-['Plus_Jakarta_Sans'] text-[36px] sm:text-[48px] md:text-[72px] leading-[1.05] tracking-[-0.02em] font-extrabold text-[#271816]">
-              Discover Innovation
-            </h1>
-            <p className="font-['Inter'] text-lg text-[#64748B] leading-relaxed max-w-2xl">
-              Insights, analysis, and thought leadership shaping the future of global supply chains and logistics performance.
-            </p>
-            {/* Search bar */}
-            <div className="w-full max-w-xl relative mt-4">
-              <input
-                className="w-full pl-12 pr-4 py-4 rounded-full bg-white border border-[#E2E8F0] focus:border-[#b61722] focus:ring-1 focus:ring-[#b61722] outline-none font-['Inter'] text-base text-[#271816] shadow-[0_4px_6px_-1px_rgb(0,0,0,0.05)] transition-shadow"
-                placeholder="Search articles, whitepapers..."
-                type="text"
-              />
-              <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#64748B]">
-                search
-              </span>
-            </div>
+      <section className="relative pt-32 pb-12 px-4 md:px-8 overflow-hidden flex items-center mb-12">
+        <div className="absolute inset-0 z-0">
+          <div className="w-full h-full bg-[#ffffff]">
+            <img
+              alt="High-tech logistics control room visualization"
+              className="w-full h-full object-cover opacity-15 mix-blend-luminosity"
+              src={discoverFeatured}
+            />
           </div>
-        </ScrollReveal>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#fff8f7] via-[#fff8f7]/80 to-transparent"></div>
+        </div>
+
+        <div className="max-w-[1280px] mx-auto w-full relative z-10">
+          <ScrollReveal>
+            <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-6">
+              <span className="font-['Inter'] text-[12px] leading-none tracking-[0.15em] font-semibold text-[#b61722] uppercase">
+                // Resource Hub //
+              </span>
+              <h1 className="font-['Plus_Jakarta_Sans'] text-[36px] sm:text-[48px] md:text-[72px] leading-[1.05] tracking-[-0.02em] font-extrabold text-[#271816]">
+                Discover Innovation
+              </h1>
+              <p className="font-['Inter'] text-lg text-[#64748B] leading-relaxed max-w-2xl">
+                Insights, analysis, and thought leadership shaping the future of global supply chains and logistics performance.
+              </p>
+              {/* Search bar */}
+              <div className="w-full max-w-xl relative mt-4">
+                <input
+                  className="w-full pl-12 pr-4 py-4 rounded-full bg-white border border-[#E2E8F0] focus:border-[#b61722] focus:ring-1 focus:ring-[#b61722] outline-none font-['Inter'] text-base text-[#271816] shadow-[0_4px_6px_-1px_rgb(0,0,0,0.05)] transition-shadow"
+                  placeholder="Search articles, whitepapers..."
+                  type="text"
+                />
+                <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-[#64748B]">
+                  search
+                </span>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* ── Featured Article ── */}
